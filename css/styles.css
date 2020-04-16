@@ -1,3 +1,69 @@
+html {
+  box-sizing: border-box;
+}
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
+body {
+  background: #5F72A5;
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+}
 
+header {
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sounds__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.sounds {
+  max-width: 600px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.wi {
+  font-size: 60px;
+}
+
+.sounds__item {
+  margin: 10px;
+  height: 180px;
+  width: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 30px;
+}
+
+@media only screen and (max-width: 500px) {
+
+  .sounds__wrapper {
+    margin: 40px;
+  }
+}
