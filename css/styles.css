@@ -30,11 +30,11 @@ header {
   justify-content: center;
   align-items: flex-start;
   flex: 1;
+  overflow-y: scroll;
 }
 
 .sounds {
   max-width: 600px;
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -46,9 +46,9 @@ header {
 }
 
 .sounds__item {
-  margin: 10px;
-  height: 180px;
-  width: 110px;
+  margin: 0 24px 72px;
+  height: 110px;
+  width: 84px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,11 +59,16 @@ header {
   justify-content: center;
   align-items: flex-end;
   padding: 30px;
+  background: #4b5b86;
 }
 
 @media only screen and (max-width: 500px) {
-
+  
   .sounds__wrapper {
-    margin: 40px;
+  margin: 20px 10px 10px;
+  }
+
+  .player {
+    padding: 15px;
   }
 }
