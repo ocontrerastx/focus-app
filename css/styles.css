@@ -1,3 +1,74 @@
+html {
+  box-sizing: border-box;
+}
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
+body {
+  background: #5F72A5;
+  margin: 0;
+  color: white;
+  font-family: sans-serif;
+}
 
+header {
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.sounds__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  overflow-y: scroll;
+}
+
+.sounds {
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.wi {
+  font-size: 60px;
+}
+
+.sounds__item {
+  margin: 0 24px 72px;
+  height: 110px;
+  width: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 30px;
+  background: #4b5b86;
+}
+
+@media only screen and (max-width: 500px) {
+  
+  .sounds__wrapper {
+  margin: 20px 10px 10px;
+  }
+
+  .player {
+    padding: 15px;
+  }
+}
