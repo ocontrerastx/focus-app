@@ -60,16 +60,16 @@ body {
   flex-direction: column;
 }
 
-.sounds__item-active {
+.sounds__item--active {
   opacity: 1;
 }
 
-.slidecontainer {
+.slide-container {
   padding-top: 15px;
   visibility: hidden;
 }
 
-.slidecontainer-enabled {
+.slide-container--enabled {
   visibility: visible;
 }
 
