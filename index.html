@@ -7,6 +7,7 @@
 
   <!-- TODO: Create a set of icons to replace this temporary set-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
   <link rel="stylesheet" href="css/styles.css">
 
   <title>Focus</title>
@@ -15,37 +16,54 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1>Focus App</h1>
+      <h1><em>focus</em></h1>
     </header>
 
     <div class="sounds__wrapper">
       <div class="sounds">
-        <div class="sounds__item">
+        <div class="sounds__item" data-description="Rain">
           <i class="wi wi-day-rain"></i>
+          <div class="slide-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="rainVolume">
+          </div>
         </div>
-        <div class="sounds__item">
+        <div class="sounds__item" data-description="Thunderstorm">
           <i class="wi wi-day-snow-thunderstorm"></i>
+          <div class="slide-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="thunderstormVolume">
+          </div>
         </div>
-        <div class="sounds__item">
+        <div class="sounds__item" data-description="Fire">
           <i class="wi wi-fire"></i>
+          <div class="slide-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="fireVolume">
+          </div>
         </div>
-        <div class="sounds__item">
+        <div class="sounds__item" data-description="Wind">
           <i class="wi wi-strong-wind"></i>
+          <div class="slide-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="windVolume">
+          </div>
         </div>
-        <div class="sounds__item">
+        <div class="sounds__item" data-description="Train">
           <i class="wi wi-train"></i>
+          <div class="slide-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="trainVolume">
+          </div>
         </div>
       </div>
     </div>
 
     <div class="player">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="80px" height="80px">
-        <path d="M0 0h24v24H0z" fill="none" />
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
-      </svg>
+      <button class="player__button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="80px" height="80px">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+        </svg>
+      </button>
     </div>
   </div>
-  <script src="js/sounds.js"></script>
+  <script src="js/sound-player.js"></script>
 </body>
 
 </html>
