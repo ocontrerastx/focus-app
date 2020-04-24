@@ -115,7 +115,12 @@ body {
 .player__button {
   background: #303a52;
   border: 0;
+  outline: none;
   cursor: pointer;
+}
+
+.player__button--disabled {
+  display:none;
 }
 
 @media only screen and (max-width: 500px) {

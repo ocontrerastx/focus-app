@@ -56,9 +56,16 @@
 
     <div class="player">
       <button class="player__button">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="80px" height="80px">
+        <svg class="player__button--play" data-description="Play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+          fill="white" width="80px" height="80px">
           <path d="M0 0h24v24H0z" fill="none" />
           <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+        </svg>
+
+        <svg class="player__button--pause player__button--disabled" data-description="Pause"
+          xmlns="http://www.w3.org/2000/svg" height="80px" fill="white" viewBox="0 0 24 24" width="80px">
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
         </svg>
       </button>
     </div>
