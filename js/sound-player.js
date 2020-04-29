@@ -6,9 +6,17 @@ const soundItems = document.querySelectorAll('.sounds__item');
 function handleSoundItemsClick(event) {
   const soundItem = event.currentTarget;
   const slider = soundItem.querySelector('.slide-container');
+  const audioSelected = soundItem.dataset.description;
 
   soundItem.classList.toggle('sounds__item--active');
   slider.classList.toggle('slide-container--enabled');
+  const audio = document.querySelector(`.audio__${audioSelected}`);
+
+  function togglePlay() {
+    return audio.paused ? audio.play() : audio.pause();
+  }
+
+  togglePlay();
 }
 
 soundItems.forEach(item => item.addEventListener('click', handleSoundItemsClick));

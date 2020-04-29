@@ -10,14 +10,20 @@ header {
   display: flex;
   align-items: center;
   padding-left: 24px;
+  border-bottom: 1px #303a52 solid;
+}
+
+h1 {
+  font-weight: 100;
+  font-size: 24px;
 }
 
 body {
   background: #574b90;
   margin: 0;
   color: white;
-  font-family: "Open Sans";
-  font-weight: 100;
+  font-family: 'Work Sans', sans-serif;  
+  /* font-weight: 100; */
 }
 
 .wrapper {
@@ -43,15 +49,11 @@ body {
   flex-wrap: wrap;
 }
 
-.wi {
-  font-size: 60px;
-}
-
 .sounds__item {
-  margin: 0 24px 72px;
-  height: 110px;
-  padding-top: 20px;
-  width: 84px;
+  /* margin: 0 24px 72px; */
+  /* height: 110px; */
+  padding: 30px 10px 20px 10px;
+  /* flex: 1 1 33%; */
   cursor:pointer;
   opacity: 0.6;
   display: flex;
@@ -60,12 +62,17 @@ body {
   flex-direction: column;
 }
 
+i {
+  padding-bottom: 15px;
+}
+
 .sounds__item--active {
   opacity: 1;
 }
 
 .slide-container {
   padding-top: 15px;
+  width: 100px;
   visibility: hidden;
 }
 

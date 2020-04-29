@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- TODO: Create a set of icons to replace this temporary set-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans" />
+  <script src="https://kit.fontawesome.com/bbb0f30781.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 
   <title>Focus</title>
@@ -16,37 +15,56 @@
 <body>
   <div class="wrapper">
     <header>
-      <h1><em>focus</em></h1>
+      <h1>focus</h1>
     </header>
 
     <div class="sounds__wrapper">
       <div class="sounds">
-        <div class="sounds__item" data-description="Rain">
-          <i class="wi wi-day-rain"></i>
+        <div class="sounds__item" data-description="rain">
+          <i class="fas fa-cloud-rain fa-4x"></i>
+          <audio class="audio__rain" src="audio/rain.mp3"></audio>
           <div class="slide-container">
             <input type="range" min="1" max="100" value="50" class="slider" id="rainVolume">
           </div>
         </div>
-        <div class="sounds__item" data-description="Thunderstorm">
-          <i class="wi wi-day-snow-thunderstorm"></i>
+        <div class="sounds__item" data-description="thunderstorm">
+          <i class="fas fa-poo-storm fa-4x"></i>
+          <audio class="audio__thunderstorm" src="audio/thunderstorm.mp3"></audio>
           <div class="slide-container">
             <input type="range" min="1" max="100" value="50" class="slider" id="thunderstormVolume">
           </div>
         </div>
-        <div class="sounds__item" data-description="Fire">
-          <i class="wi wi-fire"></i>
+        <div class="sounds__item" data-description="fire">
+          <i class="fas fa-fire fa-4x"></i>
+          <audio class="audio__fire" src="audio/fire.mp3"></audio>
           <div class="slide-container">
             <input type="range" min="1" max="100" value="50" class="slider" id="fireVolume">
           </div>
         </div>
-        <div class="sounds__item" data-description="Wind">
-          <i class="wi wi-strong-wind"></i>
+        <div class="sounds__item" data-description="wind">
+          <i class="fas fa-wind fa-4x"></i>
+          <audio class="audio__wind" src="audio/wind.mp3"></audio>
           <div class="slide-container">
             <input type="range" min="1" max="100" value="50" class="slider" id="windVolume">
           </div>
         </div>
-        <div class="sounds__item" data-description="Train">
-          <i class="wi wi-train"></i>
+        <div class="sounds__item" data-description="water">
+          <i class="fas fa-water fa-4x"></i>
+          <audio class="audio__water" src="audio/water.mp3"></audio>
+          <div class="slide-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="trainVolume">
+          </div>
+        </div>
+        <div class="sounds__item" data-description="forest">
+          <i class="fas fa-tree fa-4x"></i>
+          <audio class="audio__forest" src="audio/forest.mp3"></audio>
+          <div class="slide-container">
+            <input type="range" min="1" max="100" value="50" class="slider" id="trainVolume">
+          </div>
+        </div>
+        <div class="sounds__item" data-description="coffee-shop">
+          <i class="fas fa-coffee fa-4x"></i>
+          <audio class="audio__coffee-shop" src="audio/coffee-shop.mp3"></audio>
           <div class="slide-container">
             <input type="range" min="1" max="100" value="50" class="slider" id="trainVolume">
           </div>
