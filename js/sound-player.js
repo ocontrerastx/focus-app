@@ -1,5 +1,5 @@
-const volumeOn = document.querySelector('.fa-volume-up');
-const volumeMuted = document.querySelector('.fa-volume-mute');
+const volumeOnIconElement = document.querySelector('.fa-volume-up');
+const volumeMutedIconElement = document.querySelector('.fa-volume-mute');
 const soundItems = document.querySelectorAll('.sounds__item');
 const volumeSliders = document.querySelectorAll('.slider');
 
@@ -44,7 +44,7 @@ function handleVolumeOnClick(event) {
   const clickedButton = event.currentTarget;
 
   clickedButton.classList.toggle('volume__status--hidden');
-  volumeMuted.classList.toggle('volume__status--hidden');
+  volumeMutedIconElement.classList.toggle('volume__status--hidden');
 
   // Play Audio when button is clicked
 }
@@ -53,10 +53,10 @@ function handleVolumeMuteClick(event) {
   const clickedButton = event.currentTarget;
 
   clickedButton.classList.toggle('volume__status--hidden');
-  volumeOn.classList.toggle('volume__status--hidden');
+  volumeOnIconElement.classList.toggle('volume__status--hidden');
 
   // Pause Audio when button is clicked
 }
 
-volumeOn.addEventListener('click', handleVolumeOnClick);
-volumeMuted.addEventListener('click', handleVolumeMuteClick);
+volumeOnIconElement.addEventListener('click', handleVolumeOnClick);
+volumeMutedIconElement.addEventListener('click', handleVolumeMuteClick);
