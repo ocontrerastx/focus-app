@@ -25,8 +25,10 @@ function handleSoundItemsClick(event) {
   togglePlay();
 }
 
+// Listen to see which sound items get clicked
 soundItems.forEach(item => item.addEventListener('click', handleSoundItemsClick));
 
+// Function that raises/lowers the volume when the slider is used
 function handleVolumeUpdate(event) {
   const slider = event.currentTarget;
   const volume = slider.value * 0.01;
@@ -38,19 +40,21 @@ function handleVolumeUpdate(event) {
   audio.volume = volume;
 }
 
+// Listen to see which slider is used to raise/lower volume
 volumeSliders.forEach(item => item.addEventListener('input', handleVolumeUpdate));
 
 const forEach = function(array, callback, scope) {
   for (let i = 0; i < array.length; i += 1) {
-    callback.call(scope, i, array[i]); // passes back stuff we need
+    callback.call(scope, i, array[i]);
   }
 };
 
+// Function that pauses any of the audio that were playing
 function handleVolumeOnClick(event) {
   const clickedButton = event.currentTarget;
-  const allAudio = document.querySelectorAll('audio');
+  const playingAudio = document.querySelectorAll('audio');
 
-  forEach(allAudio, function(index, value) {
+  forEach(playingAudio, function(value) {
     if (!value.paused) {
       value.pause();
       value.classList.add('paused');
@@ -61,11 +65,12 @@ function handleVolumeOnClick(event) {
   volumeMutedIconElement.classList.toggle('volume__status--hidden');
 }
 
+// Function that resumes playing audio that was playing when audio was paused
 function handleVolumeMuteClick(event) {
   const clickedButton = event.currentTarget;
-  const allAudio = document.querySelectorAll('.paused');
+  const pausedAudio = document.querySelectorAll('.paused');
 
-  forEach(allAudio, function(index, value) {
+  forEach(pausedAudio, function(value) {
     value.play();
     value.classList.remove('paused');
   });
@@ -74,5 +79,6 @@ function handleVolumeMuteClick(event) {
   volumeOnIconElement.classList.toggle('volume__status--hidden');
 }
 
+// Listen for the volume on and muted icons to be clicked
 volumeOnIconElement.addEventListener('click', handleVolumeOnClick);
 volumeMutedIconElement.addEventListener('click', handleVolumeMuteClick);
