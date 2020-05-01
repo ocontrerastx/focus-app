@@ -40,22 +40,38 @@ function handleVolumeUpdate(event) {
 
 volumeSliders.forEach(item => item.addEventListener('input', handleVolumeUpdate));
 
+const forEach = function(array, callback, scope) {
+  for (let i = 0; i < array.length; i += 1) {
+    callback.call(scope, i, array[i]); // passes back stuff we need
+  }
+};
+
 function handleVolumeOnClick(event) {
   const clickedButton = event.currentTarget;
+  const allAudio = document.querySelectorAll('audio');
+
+  forEach(allAudio, function(index, value) {
+    if (!value.paused) {
+      value.pause();
+      value.classList.add('paused');
+    }
+  });
 
   clickedButton.classList.toggle('volume__status--hidden');
   volumeMutedIconElement.classList.toggle('volume__status--hidden');
-
-  // Play Audio when button is clicked
 }
 
 function handleVolumeMuteClick(event) {
   const clickedButton = event.currentTarget;
+  const allAudio = document.querySelectorAll('.paused');
+
+  forEach(allAudio, function(index, value) {
+    value.play();
+    value.classList.remove('paused');
+  });
 
   clickedButton.classList.toggle('volume__status--hidden');
   volumeOnIconElement.classList.toggle('volume__status--hidden');
-
-  // Pause Audio when button is clicked
 }
 
 volumeOnIconElement.addEventListener('click', handleVolumeOnClick);
