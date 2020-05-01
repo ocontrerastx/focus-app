@@ -21,11 +21,18 @@ h1 {
 
 .volume__status {
   cursor: pointer;
-  display: none;
 }
 
 .volume__status--hidden {
   display: none;
+}
+
+.fa-volume-up {
+  opacity: 0.6;
+}
+
+.fa-volume-up:hover {
+  opacity: 1;
 }
 
 body {

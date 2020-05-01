@@ -25,8 +25,10 @@ function handleSoundItemsClick(event) {
   togglePlay();
 }
 
+// Listen to see which sound items get clicked
 soundItems.forEach(item => item.addEventListener('click', handleSoundItemsClick));
 
+// Function that raises/lowers the volume when the slider is used
 function handleVolumeUpdate(event) {
   const slider = event.currentTarget;
   const volume = slider.value * 0.01;
@@ -38,25 +40,39 @@ function handleVolumeUpdate(event) {
   audio.volume = volume;
 }
 
+// Listen to see which slider is used to raise/lower volume
 volumeSliders.forEach(item => item.addEventListener('input', handleVolumeUpdate));
 
+// Function that pauses any of the audio that were playing
 function handleVolumeOnClick(event) {
   const clickedButton = event.currentTarget;
+  const audioElementRefs = document.querySelectorAll('audio');
+
+  audioElementRefs.forEach(function(audioElement) {
+    if (!audioElement.paused) {
+      audioElement.pause();
+      audioElement.classList.add('paused');
+    }
+  });
 
   clickedButton.classList.toggle('volume__status--hidden');
   volumeMutedIconElement.classList.toggle('volume__status--hidden');
-
-  // Play Audio when button is clicked
 }
 
+// Function that resumes playing audio that was playing when audio was paused
 function handleVolumeMuteClick(event) {
   const clickedButton = event.currentTarget;
+  const audioElementRefs = document.querySelectorAll('.paused');
+
+  audioElementRefs.forEach(function(audioElement) {
+    audioElement.play();
+    audioElement.classList.remove('paused');
+  });
 
   clickedButton.classList.toggle('volume__status--hidden');
   volumeOnIconElement.classList.toggle('volume__status--hidden');
-
-  // Pause Audio when button is clicked
 }
 
+// Listen for the volume on and muted icons to be clicked
 volumeOnIconElement.addEventListener('click', handleVolumeOnClick);
 volumeMutedIconElement.addEventListener('click', handleVolumeMuteClick);
