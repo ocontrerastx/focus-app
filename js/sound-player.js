@@ -43,21 +43,15 @@ function handleVolumeUpdate(event) {
 // Listen to see which slider is used to raise/lower volume
 volumeSliders.forEach(item => item.addEventListener('input', handleVolumeUpdate));
 
-const forEach = function(array, callback, scope) {
-  for (let i = 0; i < array.length; i += 1) {
-    callback.call(scope, i, array[i]);
-  }
-};
-
 // Function that pauses any of the audio that were playing
 function handleVolumeOnClick(event) {
   const clickedButton = event.currentTarget;
-  const playingAudio = document.querySelectorAll('audio');
+  const audioElementRefs = document.querySelectorAll('audio');
 
-  forEach(playingAudio, function(idex, value) {
-    if (!value.paused) {
-      value.pause();
-      value.classList.add('paused');
+  audioElementRefs.forEach(function(audioElement) {
+    if (!audioElement.paused) {
+      audioElement.pause();
+      audioElement.classList.add('paused');
     }
   });
 
@@ -68,11 +62,11 @@ function handleVolumeOnClick(event) {
 // Function that resumes playing audio that was playing when audio was paused
 function handleVolumeMuteClick(event) {
   const clickedButton = event.currentTarget;
-  const pausedAudio = document.querySelectorAll('.paused');
+  const audioElementRefs = document.querySelectorAll('.paused');
 
-  forEach(pausedAudio, function(index, value) {
-    value.play();
-    value.classList.remove('paused');
+  audioElementRefs.forEach(function(audioElement) {
+    audioElement.play();
+    audioElement.classList.remove('paused');
   });
 
   clickedButton.classList.toggle('volume__status--hidden');
