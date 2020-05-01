@@ -54,7 +54,7 @@ function handleVolumeOnClick(event) {
   const clickedButton = event.currentTarget;
   const playingAudio = document.querySelectorAll('audio');
 
-  forEach(playingAudio, function(value) {
+  forEach(playingAudio, function(idex, value) {
     if (!value.paused) {
       value.pause();
       value.classList.add('paused');
@@ -70,7 +70,7 @@ function handleVolumeMuteClick(event) {
   const clickedButton = event.currentTarget;
   const pausedAudio = document.querySelectorAll('.paused');
 
-  forEach(pausedAudio, function(value) {
+  forEach(pausedAudio, function(index, value) {
     value.play();
     value.classList.remove('paused');
   });
